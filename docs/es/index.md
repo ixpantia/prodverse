@@ -1,9 +1,6 @@
 ---
 template: overrides/home.html
-title: Material for MkDocs
-social:
-  cards_layout_options:
-    title: Documentation that simply works
+title: prodverse
 hide:
   - navigation
   - toc
@@ -45,9 +42,12 @@ hide:
     <div class="text">
         <h1>prodverse</h1>
         <p>
-            El prodverse es una caja de herramientas para llevar tus proyectos de ciencia de datos a la producción.
-            El ecosistema está construido para ayudarte a ti y a tu equipo a construir, desplegar,
-            y mantener productos de datos listos para producción escritos con el lenguaje de programación R.
+            El prodverse es una caja de herramientas diseñada por <a
+            href="https://www.ixpantia.com/es/">ixpantia</a> para llevar tus
+            proyectos de ciencia de datos a la producción. El ecosistema está
+            construido para ayudarte a ti y a tu equipo a construir, desplegar,
+            y mantener productos de datos listos para producción escritos con
+            el lenguaje de programación R.
         </p>
     </div>
 </div>

@@ -24,12 +24,20 @@ plugins:
           build: true
           nav:
             - Home: index.md
+            - Tools & Packages: tools.md
+            - Get started:
+              - Introduction: get_started/index.md
+              - Shiny in production with the prodverse: get_started/shiny_in_prod.md
         - locale: es
           default: false
           name: Español
           build: true
           nav:
             - Inicio: index.md
+            - Herramientas y Paquetes: tools.md
+            - Aprende:
+              - Introducción: get_started/index.md
+              - Shiny en producción con el prodverse: get_started/shiny_in_prod.md
 
 markdown_extensions:
   - attr_list
