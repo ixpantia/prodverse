@@ -1,9 +1,6 @@
 ---
 template: overrides/home.html
-title: Material for MkDocs
-social:
-  cards_layout_options:
-    title: Documentation that simply works
+title: prodverse
 hide:
   - navigation
   - toc
@@ -45,9 +42,11 @@ hide:
     <div class="text">
         <h1>prodverse</h1>
         <p>
-            The prodverse is a toolbox for taking your data science projects to production.
-            The ecosystem is built to help you and your team build, deploy,
-            and maintain production-ready data products written with the R programming language.
+            The prodverse is a toolbox designed by <a
+            href="https://www.ixpantia.com/en/">ixpantia</a> for taking your
+            data science projects to production. The ecosystem is built to help
+            you and your team build, deploy, and maintain production-ready data
+            products written with the R programming language.
         </p>
     </div>
 </div>
