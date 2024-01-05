@@ -1,0 +1,39 @@
+site_name: prodverse
+site_dir: target
+site_url: https://prodverse.ixpantia.com
+theme:
+  custom_dir: 'theme'
+  name: material
+  palette:
+    scheme: prodverse
+  logo: figures/rocket.png
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.tabs.sticky
+docs_dir: docs
+plugins:
+  - macros
+  - search
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+          nav:
+            - Home: index.md
+        - locale: es
+          default: false
+          name: Español
+          build: true
+          nav:
+            - Inicio: index.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+extra_css:
+  - stylesheets/extra.css
