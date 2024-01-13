@@ -201,7 +201,7 @@ First, we will create a `Dockerfile`:
 # For this example we will use faucet 0.4.2 and R 4.3
 # Be sure to check what the latest version is
 # and use that instead.
-FROM ixpantia/faucet:0.4.2-r4.3
+FROM ixpantia/faucet:r4.3
 
 # Install the required packages
 RUN Rscript -e "install.packages(c('shiny', 'tapLock'))"
