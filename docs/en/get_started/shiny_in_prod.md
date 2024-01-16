@@ -198,9 +198,8 @@ First, we will create a `Dockerfile`:
 # Faucet docker image tags have two components:
 # 1. The faucet version
 # 2. The R version
-# For this example we will use faucet 0.4.2 and R 4.3
-# Be sure to check what the latest version is
-# and use that instead.
+# For this example we will use faucet with R 4.3
+# This will pull the latest version of faucet with R 4.3
 FROM ixpantia/faucet:r4.3
 
 # Install the required packages
@@ -248,7 +247,9 @@ You should now be able to access your app at `http://<your-domain>`.
 If you want to use SSL you will want to use a reverse proxy like
 Nginx or Apache. Check out
 [Shiny Server: Running with a Proxy](https://support.posit.co/hc/en-us/articles/213733868-Running-Shiny-Server-with-a-Proxy)
-for examples on how to do this.
+for examples on how to do this. You can also read
+[faucet: With Reverse Proxy](https://ixpantia.github.io/faucet/reverse_proxy/)
+for more information on how to use a reverse proxy with faucet.
 
 ## Step 6: Tuning our deployment
 
@@ -315,7 +316,7 @@ FAUCET_IP_FROM=x-real-ip
 Now that we have our app running, we want to make sure that
 it keeps running even if we close our terminal. For this
 we will run the container in detached mode and we will
-use `docker-compose` to manage the container.
+use `docker compose` to manage the container.
 
 First, we will create a `docker-compose.yml` file:
 
@@ -333,7 +334,7 @@ services:
 Now we can run the container in detached mode:
 
 ```bash
-sudo docker-compose up -d
+sudo docker compose up -d
 ```
 
 You can now close your terminal and the container will
