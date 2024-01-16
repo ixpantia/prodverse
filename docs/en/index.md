@@ -75,7 +75,8 @@ The goals of the prodverse are to:
 ## Should I consider the prodverse over other tools?
 
 The prodverse is not for everyone. If you are looking for a tool that allows
-for one-click deployment and sharing of your R applications, then you should
+for one-click deployment and easy sharing of your R applications, Rmarkdown /
+quarto docuemtns, and more then you should
 consider [Posit Connect](https://posit.co/products/enterprise/connect/). Posit
 Connect is a great tool for sharing your R applications with your data science
 team or your organization.

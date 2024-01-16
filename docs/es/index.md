@@ -35,19 +35,19 @@ hide:
 }
 </style>
 
+
 <div class="container">
     <div class="image">
-        <img src="/figures/prodverse.png" alt="Descripción de la Imagen">
+        <img src="/figures/prodverse.png">
     </div>
     <div class="text">
         <h1>prodverse</h1>
         <p>
-            El prodverse es una caja de herramientas diseñada por <a
+            Prodverse es una caja de herramientas diseñada por <a
             href="https://www.ixpantia.com/es/">ixpantia</a> para llevar tus
-            proyectos de ciencia de datos a la producción. El ecosistema está
-            construido para ayudarte a ti y a tu equipo a construir, desplegar,
-            y mantener productos de datos listos para producción escritos con
-            el lenguaje de programación R.
+            proyectos de ciencia de datos a producción. El ecosistema está construido para ayudarte
+            a ti y a tu equipo a construir, desplegar y mantener productos de datos listos para producción
+            escritos con el lenguaje de programación R.
         </p>
     </div>
 </div>
@@ -56,37 +56,37 @@ hide:
 
 ## ¿Qué es exactamente el prodverse?
 
-El prodverse es una colección de herramientas y paquetes de R que te ayudan a construir, desplegar,
+Prodverse es una colección de herramientas y paquetes de R que te ayudan a construir, desplegar
 y mantener productos de datos listos para producción escritos con el lenguaje de programación R.
 
-Los objetivos del prodverse son:
+Los objetivos de prodverse son:
 
-  - **Hacer que R sea escalable**: R es un gran lenguaje para la ciencia de datos, pero
+  - **Hacer escalable a R**: R es un gran lenguaje para ciencia de datos, pero
     muchas veces faltan las herramientas para escalarlo a muchos usuarios.
-    El prodverse busca llenar este vacío.
-  - **Preparar R para producción**: R con Shiny y Plumber son herramientas increíbles,
-    pero hay muchas cosas que se necesitan para hacerlos listos para producción.
-    Autenticación, registro y replicación son solo algunas de las cosas que
-    proporciona el prodverse.
-  - **Sin bloqueo de proveedor**: El prodverse tiene como objetivo proporcionar una gran experiencia
-    en cualquier lugar donde quieras desplegar tus aplicaciones R.
+    Prodverse tiene como objetivo llenar este vacío.
+  - **Preparar a R para producción**: R con Shiny y Plumber son herramientas increíbles,
+    pero hay muchos aspectos que se necesitan para hacerlas listas para producción.
+    Autenticación, registro y replicación son solo algunos de los aspectos que
+    prodverse proporciona.
+  - **Sin bloqueo de proveedor**: Prodverse tiene como objetivo proporcionar una gran experiencia
+    donde quiera que desees desplegar tus aplicaciones R.
 
 ---
 
-## ¿Debería considerar el prodverse sobre otras herramientas?
+## ¿Debería considerar prodverse sobre otras herramientas?
 
-El prodverse no es para todos. Si estás buscando una herramienta que permita
-el despliegue y la compartición de tus aplicaciones R con un solo clic, entonces deberías
-considerar [Posit Connect](https://posit.co/products/enterprise/connect/). Posit
+Prodverse no es para todos. Si buscas una herramienta que permita
+un despliegue con un solo clic y compartir fácilmente tus aplicaciones R, documentos Rmarkdown /
+quarto, y más, entonces deberías considerar [Posit Connect](https://posit.co/products/enterprise/connect/). Posit
 Connect es una gran herramienta para compartir tus aplicaciones R con tu equipo de ciencia de datos o tu organización.
 
-Si tu equipo de ciencia de datos no está listo para una plataforma de ciencia de datos completamente desarrollada
-como Posit Connect, o necesita una solución más personalizada, entonces el prodverse
+Si tu equipo de ciencia de datos no está listo para una plataforma de ciencia de datos completamente equipada
+como Posit Connect, o necesita una solución más personalizada, entonces prodverse
 podría ser una buena opción para ti.
 
 ---
 
 ## ¿Necesitas ayuda?
 
-Si necesitas consultoría personalizada o soporte para tu equipo de ciencia de datos
-por favor contáctanos en [ixpantia.com](https://www.ixpantia.com/es/contacto).
+Si necesitas consultoría personalizada o soporte para tu equipo de ciencia de datos,
+por favor contáctanos en [ixpantia.com](https://www.ixpantia.com/es/contact-us).

@@ -1,6 +1,6 @@
 site_name: prodverse
 site_dir: target
-site_url: https://ixpantia.github.io/prodverse/
+site_url: https://prodverse.ixpantia.com/
 theme:
   custom_dir: 'theme'
   name: material
