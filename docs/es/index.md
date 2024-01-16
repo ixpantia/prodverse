@@ -89,4 +89,4 @@ podría ser una buena opción para ti.
 ## ¿Necesitas ayuda?
 
 Si necesitas consultoría personalizada o soporte para tu equipo de ciencia de datos,
-por favor contáctanos en [ixpantia.com](https://www.ixpantia.com/es/contact-us).
+por favor contáctanos en [ixpantia.com](https://www.ixpantia.com/es/contacto).
