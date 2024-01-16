@@ -1,0 +1,1028 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://prodverse.ixpantia.com/es/get_started/shiny_in_prod/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Shiny en producción con el prodverse - prodverse</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="prodverse" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#shiny-en-produccion-con-el-prodverse" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <span class="md-header__title">
+      prodverse
+    </span>
+    
+      
+        
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tools/" class="md-tabs__link">
+        
+  
+    
+  
+  Herramientas y Paquetes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Aprende
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+    
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../get_started/shiny_in_prod/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="prodverse" class="md-nav__button md-logo" aria-label="prodverse" data-md-component="logo">
+      
+  <img src="../../../figures/rocket.png" alt="logo">
+
+    </a>
+    prodverse
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas y Paquetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Aprende
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aprende
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Shiny en producción con el prodverse
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Shiny en producción con el prodverse
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-1-crear-un-proyecto-de-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear un proyecto de GCP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-2-crear-una-pantalla-de-consentimiento-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Crear una pantalla de consentimiento OAuth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-crear-un-id-de-cliente-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Crear un ID de cliente OAuth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-4-nuestra-aplicacion-shiny" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4: Nuestra aplicación Shiny
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-5-desplegar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5: Desplegar la aplicación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-6-ajustando-nuestro-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6: Ajustando nuestro despliegue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 6: Ajustando nuestro despliegue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numero-de-trabajadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Número de trabajadores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-un-proxy-inverso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando un proxy inverso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-7-permitiendo-que-nuestra-aplicacion-se-ejecute-en-segundo-plano" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7: Permitiendo que nuestra aplicación se ejecute en segundo plano
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-1-crear-un-proyecto-de-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear un proyecto de GCP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-2-crear-una-pantalla-de-consentimiento-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Crear una pantalla de consentimiento OAuth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-crear-un-id-de-cliente-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Crear un ID de cliente OAuth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-4-nuestra-aplicacion-shiny" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4: Nuestra aplicación Shiny
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-5-desplegar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5: Desplegar la aplicación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-6-ajustando-nuestro-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6: Ajustando nuestro despliegue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 6: Ajustando nuestro despliegue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numero-de-trabajadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Número de trabajadores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-un-proxy-inverso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando un proxy inverso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-7-permitiendo-que-nuestra-aplicacion-se-ejecute-en-segundo-plano" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7: Permitiendo que nuestra aplicación se ejecute en segundo plano
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="shiny-en-produccion-con-el-prodverse">Shiny en producción con el prodverse</h1>
+<p>¡Bienvenido! Estás a un paso de aprender cómo desplegar una
+aplicación Shiny pública con el prodverse. Esta aplicación será
+pública, lo que significa que cualquiera con la URL podrá
+acceder a ella, sin embargo, estará protegida por autenticación de Google. Esto significa que solo las personas que agregues como
+usuarios de prueba podrán acceder a la aplicación.</p>
+<p>Desplegar una aplicación privada generalmente implica configuración
+específica de la organización, reglas de firewall y otras medidas de seguridad. Si
+tu organización utiliza Google como su proveedor de identidad, puedes
+usar esta guía para desplegar una aplicación privada con mínima configuración adicional.</p>
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+<ul>
+<li><strong>Una cuenta de Google Cloud Platform (GCP)</strong>: Necesitarás una
+  cuenta de GCP para crear un proyecto y habilitar las APIs que
+  utiliza el prodverse. Puedes crear una cuenta gratuita
+  <a href="https://cloud.google.com/free/">aquí</a>.</li>
+<li><strong>Un proyecto de Google Cloud Platform</strong>: Necesitarás un proyecto de GCP
+  para desplegar tu aplicación. Puedes crear un proyecto
+  <a href="https://console.cloud.google.com/projectcreate">aquí</a>.</li>
+<li><strong>Un nombre de dominio</strong>: Necesitarás un nombre de dominio para desplegar
+  tu aplicación. Esto puede ser un subdominio de un dominio que tengas,
+  por ejemplo, <code>example.com</code> o <code>myapp.example.com</code>.</li>
+<li>(Opcional) <strong>Una VM de Linux conectada a internet</strong>: Podrías
+  querer una máquina virtual para ejecutar el prodverse. Esto es
+  opcional ya que no lo necesitas completamente, puedes ejecutar la
+  aplicación de ejemplo en tu máquina local, Linux, Mac o Windows.
+  Sin embargo, si quieres compartir tu aplicación con otros, se recomienda
+  usar una VM. Esta guía asumirá que tienes una VM de Linux con Docker instalado.</li>
+</ul>
+<h2 id="paso-1-crear-un-proyecto-de-gcp">Paso 1: Crear un proyecto de GCP</h2>
+<p>Si ya tienes un proyecto de GCP, puedes saltarte este paso.</p>
+<ol>
+<li>Ve al siguiente enlace:
+    <a href="https://console.cloud.google.com/projectcreate">https://console.cloud.google.com/projectcreate</a></li>
+<li>Nombra tu proyecto</li>
+<li>Haz clic en <code>Crear</code></li>
+</ol>
+<p><img alt="Crear un proyecto de GCP" src="/figures/get_started/create_gcp_project.png" /></p>
+<h2 id="paso-2-crear-una-pantalla-de-consentimiento-oauth">Paso 2: Crear una pantalla de consentimiento OAuth</h2>
+<p>Si ya tienes una pantalla de consentimiento OAuth, puedes saltarte este paso.</p>
+<ol>
+<li>Ve al siguiente enlace:
+    <a href="https://console.cloud.google.com/apis/credentials/consent">https://console.cloud.google.com/apis/credentials/consent</a></li>
+<li>Selecciona <code>Externo</code> y haz clic en <code>Crear</code>: Si estás en una organización,
+    podrías querer seleccionar <code>Interno</code> en su lugar. Si estás utilizando una
+    cuenta personal de GCP, no podrás seleccionar <code>Interno</code>.
+    <code>Interno</code> te permitirá compartir la aplicación con personas en tu
+    organización sin tener que agregarlas como usuarios de prueba.
+    <img alt="Crear una pantalla de consentimiento OAuth" src="/figures/get_started/create_gcp_external_consent_screen.png" /></li>
+<li>Nombra tu pantalla de consentimiento OAuth y completa los campos requeridos.</li>
+<li>Haz clic en <code>Guardar y Continuar</code></li>
+<li>Agrega los siguientes alcances no sensibles:
+    <img alt="Agregar alcances a la pantalla de consentimiento OAuth" src="/figures/get_started/non_sensitive_scopes.png" /></li>
+<li>Haz clic en <code>Guardar y Continuar</code></li>
+<li>Agrega tus usuarios de prueba (Solo si seleccionaste <code>Externo</code> en el paso 2) </li>
+<li>Haz clic en <code>Guardar y Continuar</code></li>
+<li>Valida que la información sea correcta y haz clic en <code>Volver al Dashboard</code></li>
+</ol>
+<h2 id="paso-3-crear-un-id-de-cliente-oauth">Paso 3: Crear un ID de cliente OAuth</h2>
+<p>Si ya tienes un ID de cliente OAuth, puedes saltarte este paso, sin embargo,
+necesitarás asegurarte de que el ID de cliente siga los campos como se muestra
+en este paso.</p>
+<p><img alt="Crear ID de Cliente OAuth" src="/figures/get_started/create_oauth_client_id_gcp.png" /></p>
+<p>Después de hacer clic en <code>Crear ID de cliente OAuth</code>, se te presentará un
+formulario que necesitarás completar. Los siguientes campos son requeridos:</p>
+<ul>
+<li>Tipo de aplicación: <code>Aplicación web</code></li>
+<li>Nombre: Como quieras nombrar tu aplicación</li>
+<li>Orígenes de JavaScript autorizados: <code>http://&lt;tu-dominio&gt;</code> o <code>https://&lt;tu-dominio&gt;</code> (si tienes SSL)</li>
+<li>URI de redirección autorizadas: <code>http://&lt;tu-dominio&gt;/login</code> o <code>https://&lt;tu-dominio&gt;/login</code> (si tienes SSL)</li>
+</ul>
+<p>Para este ejemplo el dominio será <code>example.com</code>, por lo tanto, los campos se
+deberán completar de la siguiente manera:</p>
+<ul>
+<li>Tipo de aplicación: <code>Aplicación web</code></li>
+<li>Nombre: <code>Mi Aplicación Shiny</code></li>
+<li>Orígenes de JavaScript autorizados: <code>http://example.com</code></li>
+<li>URI de redirección autorizadas: <code>http://example.com/login</code></li>
+</ul>
+<p>Asegúrate de reemplazar <code>example.com</code> con tu dominio.</p>
+<p>Una vez que hayas completado el formulario, haz clic en <code>Crear</code> y guarda
+el <code>ID de cliente</code> y el <code>Secreto de cliente</code> para más adelante.</p>
+<p><img alt="ID de Cliente OAuth creado" src="/figures/get_started/gcp_client_id_and_secret.png" /></p>
+<h2 id="paso-4-nuestra-aplicacion-shiny">Paso 4: Nuestra aplicación Shiny</h2>
+<p>Para este ejemplo, crearemos una aplicación Shiny muy simple que
+mostrará un gráfico con una distribución aleatoria. La aplicación
+usará un deslizador para cambiar el número de observaciones en la
+distribución. Esta aplicación también usará <a href="https://ixpantia.github.io/tapLock/"><code>tapLock</code></a>
+para añadir autenticación a la aplicación. Además, la usaremos
+para mostrar mensajes de bienvenida agradables al usuario.</p>
+<p>Antes de construir la aplicación necesitaremos instalar <code>tapLock</code>
+y <code>shiny</code>:</p>
+<pre><code class="language-r">install.packages(c(&quot;shiny&quot;, &quot;tapLock&quot;))
+</code></pre>
+<p>Además, crea un archivo <code>.Renviron</code> para propósitos de prueba. Si estás
+usando Docker o cualquier otra solución para tus variables de entorno,
+adelante y haz eso en su lugar.</p>
+<pre><code># .Renviron
+GOOGLE_CLIENT_ID=&lt;tu-id-de-cliente&gt;
+GOOGLE_CLIENT_SECRET=&lt;tu-secreto-de-cliente&gt;
+APP_URL=&lt;tu-url-de-la-aplicación&gt;
+</code></pre>
+<p>Ahora esta será nuestra aplicación:</p>
+<pre><code class="language-r"># app.R
+library(shiny)
+library(tapLock)
+
+ui &lt;- fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      # Un mensaje de bienvenida al usuario
+      h3(textOutput(&quot;welcome&quot;)),
+      sliderInput(&quot;n&quot;, &quot;Número de observaciones&quot;, 1, 100, 50)
+    ),
+    mainPanel(
+      # Un histograma de la distribución generada
+      plotOutput(&quot;plot&quot;)
+    )
+  )
+)
+
+server &lt;- function(input, output, session) {
+
+  output$plot &lt;- renderPlot({
+    hist(rnorm(input$n))
+  })
+
+  output$welcome &lt;- renderText({
+    paste(
+      &quot;Bienvenido&quot;,
+      # Aquí extraemos el campo &quot;name&quot; del token de autenticación
+      get_token_field(token(), &quot;name&quot;),
+      &quot;a la aplicación!&quot;
+    )
+  })
+
+}
+
+# Obtenemos el id de cliente y el secreto del cliente de las variables de entorno
+client_id &lt;- Sys.getenv(&quot;GOOGLE_CLIENT_ID&quot;)
+client_secret &lt;- Sys.getenv(&quot;GOOGLE_CLIENT_SECRET&quot;)
+app_url &lt;- Sys.getenv(&quot;APP_URL&quot;)
+
+# Creamos una nueva configuración de autenticación para Google
+auth_config &lt;- new_google_config(
+  client_id = client_id,
+  client_secret = client_secret,
+  app_url = app_url
+)
+
+# En lugar de usar shinyApp(), usamos tapLock::sso_shiny_app()
+sso_shiny_app(auth_config, ui, server)
+</code></pre>
+<h2 id="paso-5-desplegar-la-aplicacion">Paso 5: Desplegar la aplicación</h2>
+<p>Tenemos una aplicación, ahora necesitamos desplegarla. El método exacto para
+desplegar la aplicación dependerá de tu entorno, sistema operativo y otros factores. Para este ejemplo usaremos Docker,
+sin embargo, puedes usar servicios de Systemd, servicios de Windows, o
+cualquier otro método que prefieras. Docker es simplemente una forma conveniente
+de desplegar la aplicación ya que cualquiera que use Linux, Mac o Windows
+puede utilizarlo.</p>
+<p>Usaremos <a href="https://ixpantia.github.io/faucet/"><code>faucet</code></a>, un servidor web muy ligero que gestiona aplicaciones Shiny y APIs Plumber
+con replicación integrada y balanceo de carga. También es muy fácil
+de usar y configurar.</p>
+<p>Primero, crearemos un <code>Dockerfile</code>:</p>
+<pre><code class="language-dockerfile"># Las etiquetas de faucet vienen en la forma
+# de faucet:&lt;versión&gt;-r&lt;versión-de-r&gt;
+# En este ejemplo usaremos etiqueta `r4.3`
+# la cual trae la versión más reciente de
+# faucet y R 4.0.3
+FROM ixpantia/faucet:r4.3
+
+# Instalamos los paquetes requeridos
+RUN Rscript -e &quot;install.packages(c('shiny', 'tapLock'))&quot;
+
+# Copiamos el archivo app.R a la imagen
+# en el directorio de trabajo actual
+COPY --chown=faucet:faucet ./app.R app.R
+
+USER faucet
+</code></pre>
+<blockquote>
+<p><strong>Nota</strong>: A partir de ahora, asumiremos que estás trabajando en tu
+máquina virtual, o al menos donde pretendes desplegar la aplicación.
+Puedes continuar probando la aplicación localmente si has configurado
+el ID de cliente OAuth para usar <code>localhost</code> como el origen y
+URI de redirección. Expondremos el puerto 80 cuando ejecutemos el
+contenedor, si quieres cambiar esto, tendrás que
+configurar el ID de cliente OAuth para usar el puerto correcto.</p>
+</blockquote>
+<p>Ahora construiremos la imagen:</p>
+<pre><code class="language-bash">sudo docker build -t my-shiny-app .
+</code></pre>
+<p>Antes de ejecutar el contenedor, recuerda que necesitamos establecer las
+variables de entorno. Para este ejemplo, crearemos un
+archivo llamado <code>.env</code> en cualquier lugar del servidor, asumiremos
+que ejecutas el siguiente comando en el mismo directorio que el
+archivo <code>.env</code>. Si no, cambia la ruta a la ruta absoluta
+del archivo <code>.env</code>.</p>
+<pre><code>sudo docker run --restart unless-stopped --env-file .env -p 80:3838 my-shiny-app
+</code></pre>
+<p>Aquí estamos ejecutando el contenedor con las variables de entorno
+disponibles en el archivo <code>.env</code>, y estamos exponiendo el puerto 80 en
+el host al puerto 3838 en el contenedor. Si quieres usar
+otro puerto, cambia el primer número al puerto que quieras
+usar.</p>
+<p>Ahora deberías poder acceder a tu aplicación en <code>http://&lt;tu-dominio&gt;</code>.
+Si quieres usar SSL, querrás usar un proxy inverso como
+Nginx o Apache. Consulta
+<a href="https://support.posit.co/hc/en-us/articles/213733868-Running-Shiny-Server-with-a-Proxy">Shiny Server: Running with a Proxy</a>
+para ejemplos sobre cómo hacer esto. También puede leer
+<a href="https://ixpantia.github.io/faucet/es/reverse_proxy/">faucet: Con Proxy Inverso</a>
+en la documentación de faucet.</p>
+<h2 id="paso-6-ajustando-nuestro-despliegue">Paso 6: Ajustando nuestro despliegue</h2>
+<p>Nuestro despliegue actualmente utiliza la configuración base de faucet,
+que en su mayoría es excelente. Sin embargo, es posible que quieras personalizar
+aspectos como el número de trabajadores (el número de instancias concurrentes de Shiny), si estás utilizando un proxy inverso, probablemente
+quieras usar los encabezados <code>X-Forwarded-For</code> o <code>X-Real-IP</code> para obtener la dirección IP real del usuario, y otros aspectos del despliegue.</p>
+<h3 id="numero-de-trabajadores">Número de trabajadores</h3>
+<p>Por defecto, faucet utilizará el número de núcleos de CPU como el
+número de trabajadores. Esto suele ser un buen valor predeterminado, sin embargo,
+puedes querer cambiar esto dependiendo de tu aplicación. Por
+ejemplo, si tu aplicación es muy intensiva en CPU, es posible que quieras
+usar menos trabajadores para evitar sobrecargar la CPU. Si tu
+aplicación es muy intensiva en I/O, es posible que quieras usar más trabajadores
+para evitar bloquear a los trabajadores.</p>
+<p>Para cambiar el número de trabajadores, puedes usar la variable de entorno <code>FAUCET_WORKERS</code>. Por ejemplo, si quieres usar 4 trabajadores,
+puedes cambiar el archivo <code>.env</code> de la siguiente manera:</p>
+<pre><code>GOOGLE_CLIENT_ID=&lt;tu-id-de-cliente&gt;
+GOOGLE_CLIENT_SECRET=&lt;tu-secreto-de-cliente&gt;
+APP_URL=&lt;tu-url-de-la-aplicación&gt;
+FAUCET_WORKERS=4
+</code></pre>
+<h3 id="usando-un-proxy-inverso">Usando un proxy inverso</h3>
+<p>Cuando usas un proxy inverso, querrás usar los
+encabezados <code>X-Forwarded-For</code> o <code>X-Real-IP</code> para obtener la verdadera
+dirección IP del usuario. Esto se debe a que la dirección IP
+del usuario será la dirección IP del proxy inverso,
+no la dirección IP del usuario. Esto es importante si
+quieres registrar correctamente y equilibrar la carga de tu aplicación.</p>
+<p>Para usar los encabezados <code>X-Forwarded-For</code> o <code>X-Real-IP</code>, puedes
+usar la variable de entorno <code>FAUCET_IP_FROM</code>.</p>
+<p>Por ejemplo, si estás usando Nginx, puedes agregar lo
+siguiente a tu bloque <code>location</code>:</p>
+<pre><code>proxy_set_header    X-Real-IP $remote_addr;
+proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+</code></pre>
+<p>Ahora puedes cambiar el archivo <code>.env</code> de la siguiente manera:</p>
+<pre><code>GOOGLE_CLIENT_ID=&lt;tu-id-de-cliente&gt;
+GOOGLE_CLIENT_SECRET=&lt;tu-secreto-de-cliente&gt;
+APP_URL=&lt;tu-url-de-la-aplicación&gt;
+FAUCET_IP_FROM=x-real-ip
+</code></pre>
+<h2 id="paso-7-permitiendo-que-nuestra-aplicacion-se-ejecute-en-segundo-plano">Paso 7: Permitiendo que nuestra aplicación se ejecute en segundo plano</h2>
+<p>Ahora que tenemos nuestra aplicación en funcionamiento, queremos asegurarnos de que
+se mantenga en funcionamiento incluso si cerramos nuestro terminal. Para esto
+ejecutaremos el contenedor en modo desacoplado y usaremos <code>docker compose</code> para gestionar el contenedor.</p>
+<p>Primero, crearemos un archivo <code>docker-compose.yml</code>:</p>
+<pre><code class="language-yaml">version: &quot;3.9&quot;
+services:
+  my-shiny-app:
+    image: my-shiny-app
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - &quot;80:3838&quot;
+</code></pre>
+<p>Ahora podemos ejecutar el contenedor en modo desacoplado:</p>
+<pre><code class="language-bash">sudo docker compose up -d
+</code></pre>
+<p>Ahora puedes cerrar tu terminal y el contenedor
+seguirá ejecutándose.</p>
+<h2 id="conclusion">Conclusión</h2>
+<p>Ahora tienes una aplicación Shiny pública protegida
+por autenticación de Google. Puedes compartir la URL con
+cualquiera que quieras y podrán acceder a la aplicación
+siempre y cuando sean agregados como usuarios de prueba en la pantalla de consentimiento OAuth.</p>
+<p>O si tu aplicación es interna, puedes compartir la URL con
+cualquiera en tu organización y podrán
+acceder a la aplicación siempre y cuando sean parte de tu
+organización.</p>
+<p>Podrías mejorar este despliegue añadiendo SSL, utilizando
+un proxy inverso, ajustando el número de trabajadores,
+y otros aspectos del despliegue. Sin embargo, este
+es un buen punto de partida para una aplicación Shiny pública.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

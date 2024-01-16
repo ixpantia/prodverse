@@ -1,0 +1,1040 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://prodverse.ixpantia.com/get_started/shiny_in_prod/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Shiny in production with the prodverse - prodverse</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="prodverse" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#shiny-in-production-with-the-prodverse" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <span class="md-header__title">
+      prodverse
+    </span>
+    
+      
+        
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tools/" class="md-tabs__link">
+        
+  
+    
+  
+  Tools & Packages
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Get started
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+    
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/get_started/shiny_in_prod/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="prodverse" class="md-nav__button md-logo" aria-label="prodverse" data-md-component="logo">
+      
+  <img src="../../figures/rocket.png" alt="logo">
+
+    </a>
+    prodverse
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools & Packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Get started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Shiny in production with the prodverse
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Shiny in production with the prodverse
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-a-gcp-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Create a GCP project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-an-oauth-consent-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create an OAuth consent screen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-an-oauth-client-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Create an OAuth client ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-our-shiny-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Our Shiny app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-deploying-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Deploying the app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-tuning-our-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Tuning our deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Tuning our deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-of-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number of workers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-reverse-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a reverse proxy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-letting-our-app-run-in-the-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Letting our app run in the background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-a-gcp-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Create a GCP project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-an-oauth-consent-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create an OAuth consent screen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-an-oauth-client-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Create an OAuth client ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-our-shiny-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Our Shiny app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-deploying-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Deploying the app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-tuning-our-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Tuning our deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Tuning our deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-of-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number of workers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-reverse-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a reverse proxy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-letting-our-app-run-in-the-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Letting our app run in the background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="shiny-in-production-with-the-prodverse">Shiny in production with the prodverse</h1>
+<p>Welcome! You are one step closer to learning how to deploy a
+public-facing Shiny app with the prodverse. This app will be
+public-facing, meaning that anyone with the URL will be able
+to access it, however, it will be protected by Google
+authentication. This means that only people you add as a
+test user will be able to access the app.</p>
+<p>Deploying a private app usually involves organization-specific
+configuration, firewall rules, and other security measures. If
+your organization uses Google as its identity provider, you can
+use this guide to deploy a private app with minimal additional
+configuration.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><strong>A Google Cloud Platform (GCP) account</strong>: You will need a
+  GCP account to create a project and enable the APIs that
+  the prodverse uses. You can create a free account
+  <a href="https://cloud.google.com/free/">here</a>.</li>
+<li><strong>A Google Cloud Platform project</strong>: You will need a GCP
+  project to deploy your app to. You can create a project
+  <a href="https://console.cloud.google.com/projectcreate">here</a>.</li>
+<li><strong>A domain name</strong>: You will need a domain name to deploy
+  your app to. This can be a subdomain of a domain you,
+  for example, <code>example.com</code> or <code>myapp.example.com</code>.</li>
+<li>(Optional) <strong>An internet connected Linux VM</strong>: You might
+  want a virtual machine to run the prodverse on. This is
+  optional since you don't fully need it, you can run the
+  example app on your local machine, Linux, Mac, or Windows.
+  However, if you want to share your app with others, it is
+  recommended to use a VM. This guide will assume that you
+  have a Linux VM with Docker installed.</li>
+</ul>
+<h2 id="step-1-create-a-gcp-project">Step 1: Create a GCP project</h2>
+<p>If you already have a GCP project, you can skip this step.</p>
+<ol>
+<li>Go the following link:
+    <a href="https://console.cloud.google.com/projectcreate">https://console.cloud.google.com/projectcreate</a></li>
+<li>Name your project</li>
+<li>Click <code>Create</code></li>
+</ol>
+<p><img alt="Create a GCP project" src="/figures/get_started/create_gcp_project.png" /></p>
+<h2 id="step-2-create-an-oauth-consent-screen">Step 2: Create an OAuth consent screen</h2>
+<p>If you already have an OAuth consent screen, you can skip this step.</p>
+<ol>
+<li>Go to the following link:
+    <a href="https://console.cloud.google.com/apis/credentials/consent">https://console.cloud.google.com/apis/credentials/consent</a></li>
+<li>Select <code>External</code> and click <code>Create</code>: If you are in an organization, 
+    you might want to select <code>Internal</code> instead. If you are using a
+    personal GCP account, you will not be able to select <code>Internal</code>.
+    <code>Internal</code> will allow you to share the app with people in your
+    organization without having to add them as test users.
+    <img alt="Create an OAuth consent screen" src="/figures/get_started/create_gcp_external_consent_screen.png" /></li>
+<li>Name your OAuth consent screen and fill out the required fields.</li>
+<li>Click <code>Save and Continue</code></li>
+<li>Add the following none-sensitive scopes:
+    <img alt="Add scopes to the OAuth consent screen" src="/figures/get_started/non_sensitive_scopes.png" /></li>
+<li>Click <code>Save and Continue</code></li>
+<li>Add your test users (Only if you selected <code>External</code> in step 2) </li>
+<li>Click <code>Save and Continue</code></li>
+<li>Validate that the information is correct and click <code>Back to Dashboard</code></li>
+</ol>
+<h2 id="step-3-create-an-oauth-client-id">Step 3: Create an OAuth client ID</h2>
+<p>If you already have an OAuth client ID, you can skip this step, however,
+you will need to make sure that the client ID follows the fields as shown
+in this step.</p>
+<p><img alt="Create OAuth Client ID" src="/figures/get_started/create_oauth_client_id_gcp.png" /></p>
+<p>After clicking <code>Create OAuth client ID</code>, you will be presented with a
+form you will need fill out. The following fields are required:</p>
+<ul>
+<li>Application type: <code>Web application</code></li>
+<li>Name: Whatever you want to name your app</li>
+<li>Authorized JavaScript origins: <code>http://&lt;your-domain&gt;</code> or <code>https://&lt;your-domain&gt;</code> (if you have SSL)</li>
+<li>Authorized redirect URIs: <code>http://&lt;your-domain&gt;/login</code> or <code>https://&lt;your-domain&gt;/login</code> (if you have SSL)</li>
+</ul>
+<p>For this example the domain will be <code>example.com</code>, so the fields you
+be filled out as follows:</p>
+<ul>
+<li>Application type: <code>Web application</code></li>
+<li>Name: <code>My Shiny App</code></li>
+<li>Authorized JavaScript origins: <code>http://example.com</code></li>
+<li>Authorized redirect URIs: <code>http://example.com/login</code></li>
+</ul>
+<p>Make sure to replace <code>example.com</code> with your domain.</p>
+<p>Once you have filled out the form, click <code>Create</code> and save
+the <code>Client ID</code> and <code>Client secret</code> for later.</p>
+<p><img alt="OAuth Client ID created" src="/figures/get_started/gcp_client_id_and_secret.png" /></p>
+<h2 id="step-4-our-shiny-app">Step 4: Our Shiny app</h2>
+<p>For this example, we will create a very simple Shiny app that
+will display a plot with a random distribution. The app will
+use a slider to change the number of observations in the
+distribution. This app will also use <a href="https://ixpantia.github.io/tapLock/"><code>tapLock</code></a>
+to add authentication to the app. This app will also use it
+to show nice welcome messages to the user.</p>
+<p>Before building the app we will need to install <code>tapLock</code>
+and <code>shiny</code>:</p>
+<pre><code class="language-r">install.packages(c(&quot;shiny&quot;, &quot;tapLock&quot;))
+</code></pre>
+<p>Also, create an <code>.Renviron</code> file for testing purposes. If you
+are using Docker or any other solution for your environment
+variables, go ahead and do that instead.</p>
+<pre><code># .Renviron
+GOOGLE_CLIENT_ID=&lt;your-client-id&gt;
+GOOGLE_CLIENT_SECRET=&lt;your-client-secret&gt;
+APP_URL=&lt;your-app-url&gt;
+</code></pre>
+<p>Now this will be our app:</p>
+<pre><code class="language-r"># app.R
+library(shiny)
+library(tapLock)
+
+ui &lt;- fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      # A welcome message to the user
+      h3(textOutput(&quot;welcome&quot;)),
+      sliderInput(&quot;n&quot;, &quot;Number of observations&quot;, 1, 100, 50)
+    ),
+    mainPanel(
+      # A histogram of the generated distribution
+      plotOutput(&quot;plot&quot;)
+    )
+  )
+)
+
+server &lt;- function(input, output, session) {
+
+  output$plot &lt;- renderPlot({
+    hist(rnorm(input$n))
+  })
+
+  output$welcome &lt;- renderText({
+    paste(
+      &quot;Welcome&quot;,
+      # Here we extract the field &quot;name&quot; from the authentication token
+      get_token_field(token(), &quot;name&quot;),
+      &quot;to the app!&quot;
+    )
+  })
+
+}
+
+# We get the client id and secret from the environment variables
+client_id &lt;- Sys.getenv(&quot;GOOGLE_CLIENT_ID&quot;)
+client_secret &lt;- Sys.getenv(&quot;GOOGLE_CLIENT_SECRET&quot;)
+app_url &lt;- Sys.getenv(&quot;APP_URL&quot;)
+
+# We create a new authentication configuration for Google
+auth_config &lt;- new_google_config(
+  client_id = client_id,
+  client_secret = client_secret,
+  app_url = app_url
+)
+
+# Instead of using shinyApp(), we use tapLock::sso_shiny_app()
+sso_shiny_app(auth_config, ui, server)
+</code></pre>
+<h2 id="step-5-deploying-the-app">Step 5: Deploying the app</h2>
+<p>We have an app, now we need to deploy it. The exact method for
+deploying the app will depend on your environment, operating
+system, and other factors. For this example we will use Docker,
+however, you can use Systemd services, Windows services, or
+any other method you prefer. Docker is just a convenient way
+to deploy the app since anyone running Linux, Mac, or Windows
+can use it.</p>
+<p>We will be using <a href="https://ixpantia.github.io/faucet/"><code>faucet</code></a>, a
+very lightweight web server that manages Shiny apps and Plumber APIs
+with built-in replication and load balancing. It is also very easy
+to use and configure.</p>
+<p>First, we will create a <code>Dockerfile</code>:</p>
+<pre><code class="language-dockerfile"># Faucet docker image tags have two components:
+# 1. The faucet version
+# 2. The R version
+# For this example we will use faucet with R 4.3
+# This will pull the latest version of faucet with R 4.3
+FROM ixpantia/faucet:r4.3
+
+# Install the required packages
+RUN Rscript -e &quot;install.packages(c('shiny', 'tapLock'))&quot;
+
+# We copy the app.R file to the image
+# on the current working directory
+COPY --chown=faucet:faucet ./app.R app.R
+
+USER faucet
+</code></pre>
+<blockquote>
+<p><strong>Note</strong>: From here on out, we will assume that you are working on your
+virtual machine, or at least where you mean to deploy the app.
+You can continue testing the app locally if you have setup
+the OAuth client ID to use <code>localhost</code> as the origin and
+redirect URI. We will be exposing port 80 when we run the
+container, if you want to change this, you will have to
+setup the OAuth client ID to use the correct port.</p>
+</blockquote>
+<p>Now we will build the image:</p>
+<pre><code class="language-bash">sudo docker build -t my-shiny-app .
+</code></pre>
+<p>Before running the container, remember we need to set the
+environment variables. For this example, we will create a
+file called <code>.env</code> anywhere on the server, we will assume
+you run the following command on the same directory as the
+<code>.env</code> file. If not, change the path to the absolute path
+of the <code>.env</code> file.</p>
+<pre><code>sudo docker run --restart unless-stopped --env-file .env -p 80:3838 my-shiny-app
+</code></pre>
+<p>Here we are running the container with the environment variables
+available in the <code>.env</code> file, and we are exposing port 80 on
+the host to port 3838 on the container. If you want to use
+another port, change the first number to the port you want
+to use.</p>
+<p>You should now be able to access your app at <code>http://&lt;your-domain&gt;</code>.
+If you want to use SSL you will want to use a reverse proxy like
+Nginx or Apache. Check out
+<a href="https://support.posit.co/hc/en-us/articles/213733868-Running-Shiny-Server-with-a-Proxy">Shiny Server: Running with a Proxy</a>
+for examples on how to do this. You can also read
+<a href="https://ixpantia.github.io/faucet/reverse_proxy/">faucet: With Reverse Proxy</a>
+for more information on how to use a reverse proxy with faucet.</p>
+<h2 id="step-6-tuning-our-deployment">Step 6: Tuning our deployment</h2>
+<p>Our deployment currently uses the base faucet configuration,
+which is mostly great. However, you may want to customize
+things like the number of workers (the number of concurrent
+Shiny instances), if you are using a reverse proxy, you
+will probably want to use the <code>X-Forwarded-For</code> or
+<code>X-Real-IP</code> headers to get the real IP address of the user,
+and other aspects of the deployment.</p>
+<h3 id="number-of-workers">Number of workers</h3>
+<p>By default, faucet will use the number of CPU cores as the
+number of workers. This is usually a good default, however,
+you may want to change this depending on your app. For
+example, if your app is very CPU intensive, you may want
+to use less workers to avoid overloading the CPU. If your
+app is very I/O intensive, you may want to use more workers
+to avoid blocking the workers.</p>
+<p>To change the number of workers, you can use the <code>FAUCET_WORKERS</code>
+environment variable. For example, if you want to use 4 workers,
+you can change the <code>.env</code> file to the following:</p>
+<pre><code>GOOGLE_CLIENT_ID=&lt;your-client-id&gt;
+GOOGLE_CLIENT_SECRET=&lt;your-client-secret&gt;
+APP_URL=&lt;your-app-url&gt;
+FAUCET_WORKERS=4
+</code></pre>
+<h3 id="using-a-reverse-proxy">Using a reverse proxy</h3>
+<p>When using a reverse proxy, you will want to use the
+<code>X-Forwarded-For</code> or <code>X-Real-IP</code> headers to get the real
+IP address of the user. This is because the IP address
+of the user will be the IP address of the reverse proxy,
+not the IP address of the user. This is important if you
+want to properly log and load balance your app.</p>
+<p>To use the <code>X-Forwarded-For</code> or <code>X-Real-IP</code> headers, you
+can use the <code>FAUCET_IP_FROM</code> environment variable.</p>
+<p>For example, if you are using Nginx, you can add the
+following to your <code>location</code> block:</p>
+<pre><code>proxy_set_header    X-Real-IP $remote_addr;
+proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+</code></pre>
+<p>Now you can change the <code>.env</code> file to the following:</p>
+<pre><code>GOOGLE_CLIENT_ID=&lt;your-client-id&gt;
+GOOGLE_CLIENT_SECRET=&lt;your-client-secret&gt;
+APP_URL=&lt;your-app-url&gt;
+FAUCET_IP_FROM=x-real-ip
+</code></pre>
+<h2 id="step-7-letting-our-app-run-in-the-background">Step 7: Letting our app run in the background</h2>
+<p>Now that we have our app running, we want to make sure that
+it keeps running even if we close our terminal. For this
+we will run the container in detached mode and we will
+use <code>docker compose</code> to manage the container.</p>
+<p>First, we will create a <code>docker-compose.yml</code> file:</p>
+<pre><code class="language-yaml">version: &quot;3.9&quot;
+services:
+  my-shiny-app:
+    image: my-shiny-app
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - &quot;80:3838&quot;
+</code></pre>
+<p>Now we can run the container in detached mode:</p>
+<pre><code class="language-bash">sudo docker compose up -d
+</code></pre>
+<p>You can now close your terminal and the container will
+keep running.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>You now have a public-facing Shiny app that is protected
+by Google authentication. You can share the URL with
+anyone you want and they will be able to access the app
+as long as they are added as test users in the OAuth
+consent screen.</p>
+<p>Or if your app is internal, you can share the URL with
+anyone in your organization and they will be able to
+access the app as long as they are part of your
+organization.</p>
+<p>You could improve this deployment by adding SSL, using
+a reverse proxy, fine-tuning the number of workers,
+and other aspects of the deployment. However, this
+is a good starting point for a public-facing Shiny
+app.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

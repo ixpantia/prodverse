@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://prodverse.ixpantia.com/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/tools/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/tools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/tools/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/get_started/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/get_started/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/get_started/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/get_started/scaling_plumber/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/get_started/scaling_plumber/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/get_started/scaling_plumber/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/get_started/shiny_in_prod/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/get_started/shiny_in_prod/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/get_started/shiny_in_prod/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/es/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/es/tools/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/tools/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/es/get_started/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/get_started/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/get_started/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/es/get_started/scaling_plumber/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/get_started/scaling_plumber/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/get_started/scaling_plumber/"/>
+    </url>
+    <url>
+        <loc>https://prodverse.ixpantia.com/es/get_started/shiny_in_prod/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://prodverse.ixpantia.com/es/get_started/shiny_in_prod/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://prodverse.ixpantia.com/get_started/shiny_in_prod/"/>
+    </url>
+</urlset>
